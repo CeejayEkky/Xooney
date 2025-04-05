@@ -1,0 +1,603 @@
+/* Global Styles */
+:root {
+    --primary-color: #4bb543;
+    --secondary-color: #59c937;
+    --accent-color: #d7f04c;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --success-color: #4361ee;
+    --danger-color: #ff3333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+marquee{
+    font-style: oblique;
+    color: black;
+    font-weight: 600;
+    background: var(--light-color);
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    padding: 7px 15px;
+    z-index: 100;
+}
+
+.logo span{
+    color: var(--light-color);
+    background: black;
+    padding: 4px;
+    border-radius: 20%;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.search-bar {
+    display: flex;
+    width: 40%;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 20px 0 0 20px;
+    outline: none;
+}
+
+.search-bar button {
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+}
+
+nav a {
+    margin-left: 1.5rem;
+    color: var(--dark-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    position: relative;
+}
+
+.cart-icon {
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: var(--danger-color);
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
+}
+
+/* Main Content Styles */
+main {
+    padding: 2rem;
+}
+
+.hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    padding: 3rem 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta {
+    background-color: white;
+    color: var(--primary-color);
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+h2 {
+    margin-bottom: 1.5rem;
+    color: var(--dark-color);
+}
+
+/* Products Grid */
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 1rem;
+}
+
+.product-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-seller {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-price {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.product-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* Sellers Grid */
+.sellers-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.seller-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.seller-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 20%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid var(--accent-color);
+}
+
+.seller-name {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.seller-rating {
+    color: #ffc107;
+    margin-bottom: 1rem;
+}
+
+/* Chat Widget */
+.chat-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background-color: white;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+.chat-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.8rem 1rem;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-chat {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.chat-messages {
+    height: 300px;
+    overflow-y: auto;
+    padding: 1rem;
+}
+
+.message {
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    max-width: 80%;
+}
+
+.received {
+    background-color: #f1f1f1;
+    align-self: flex-start;
+}
+
+.sent {
+    background-color: var(--primary-color);
+    color: white;
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.chat-input {
+    display: flex;
+    padding: 0.5rem;
+    border-top: 1px solid #eee;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    outline: none;
+}
+
+#send-message {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 2rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-section {
+    flex: 1;
+    margin-bottom: 1.5rem;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: #ddd;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    color: white;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 1px solid #444;
+    margin-top: 1rem;
+}
+
+/* Auth Modals */
+.auth-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.auth-switch {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.auth-switch a {
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+/* Payment Modal */
+.payment-modal {
+    display: none;
+    /* Same as auth-modal styles */
+}
+
+.payment-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.payment-method {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.payment-method.selected {
+    border-color: var(--primary-color);
+    background-color: rgba(67, 97, 238, 0.1);
+}
+
+.payment-method img {
+    width: 50px;
+    margin-right: 1rem;
+}
+
+/* Profile dropdown */
+.profile-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    z-index: 1;
+    border-radius: 4px;
+}
+
+.profile-menu a {
+    color: var(--dark-color);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.profile-menu a:hover {
+    background-color: #f1f1f1;
+}
+
+.show { 
+    display: block; 
+}
+
+/* Payment Styles */
+.order-summary {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+.order-summary h4 {
+    margin-bottom: 1rem;
+}
+
+#payment-items {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+}
+
+.payment-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.order-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    padding-top: 0.5rem;
+    border-top: 1px solid #ddd;
+}
+
+.payment-form {
+    margin: 1.5rem 0;
+}
+
+/* Card input styling */
+#card-number {
+    background-image: url('assets/payment/credit-card.png');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 30px;
+}
+
+/* Payment method selection */
+.payment-method {
+    transition: all 0.3s ease;
+}
+
+.payment-method:hover {
+    background-color: #f5f5f5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .logo {
+        margin-bottom: 1rem;
+    }
+
+    .search-bar {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    nav {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    nav a {
+        margin: 0;
+    }
+
+    .products-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+}
